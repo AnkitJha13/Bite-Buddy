@@ -1,7 +1,8 @@
 .header{
-  height: 34vw;
+  height: 36vw;
+  width: 96vw;
   margin: 30px auto;
-  background: url('/header_img.png') no-repeat;
+  background: url('/banner.png') no-repeat;
   background-size:contain;
   position: relative;
 }
@@ -16,10 +17,10 @@
   left: 6vw;
   animation: fadeIn 3s;
 }
-.header-contents h2{
+.header-contents h3{
   font-weight:500;
   color: white;
-  font-size: max(4.5vw,22px);
+  font-size: max(4.2vw,22px);
 }
 .header-contents p{
   color: white;

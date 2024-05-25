@@ -64,6 +64,7 @@ const LoginPopup = ({ setShowLogin }) => {
                     ? <p>Create a new account? <span onClick={() => setCurrState('Sign Up')}>Click here</span></p>
                     : <p>Already have an account? <span onClick={() => setCurrState('Login')}>Login here</span></p>
                 }
+                <p>For Admin Panel ? <span><a href="https://foodify-admin-panel.vercel.app/">Login here</a></span></p>
             </form>
         </div>
     )

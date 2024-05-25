@@ -1,7 +1,9 @@
 import basket_icon from './basket_icon.png'
 import logo from './logo.png'
 import header_img from './header_img.png'
+import banner from './banner.png'
 import search_icon from './search_icon.png'
+import Foodify from './Foodify.png'
 import menu_1 from './menu/menu_1.png'
 import menu_2 from './menu/menu_2.png'
 import menu_3 from './menu/menu_3.png'
@@ -12,6 +14,7 @@ import menu_7 from './menu/menu_7.png'
 import menu_8 from './menu/menu_8.png'
 import menu_9 from './menu/menu_9.png'
 import menu_10 from './menu/menu_10.png'
+import menu_11 from './menu/menu_11.png'
 
 import food_1 from './food/food_1.png'
 import food_2 from './food/food_2.png'
@@ -49,6 +52,9 @@ import food_33 from './food/food_33.png'
 import food_34 from './food/food_34.png'
 import food_35 from './food/food_35.png'
 import food_36 from './food/food_36.png'
+import food_37 from './food/food_37.png'
+import food_38 from './food/food_38.png'
+import food_39 from './food/food_39.png'
 
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
@@ -85,7 +91,9 @@ export const assets = {
     profile_icon,
     logout_icon,
     bag_icon,
-    parcel_icon
+    parcel_icon,
+    Foodify,
+    banner
 }
 
 export const menu_list = [
@@ -128,6 +136,10 @@ export const menu_list = [
     {
         menu_name: "Burger",
         menu_image: menu_10
+    },
+    {
+        menu_name: "Biriyani",
+        menu_image: menu_11
     }]
 
 export const food_list = [
@@ -175,7 +187,7 @@ export const food_list = [
         _id: "6",
         name: "Peri Peri Rolls",
         image: food_6,
-        price: 12,
+        price: 22,
         description: "Spicy peri peri rolls packed with flavor and heat.",
         category: "Rolls"
     },
@@ -223,7 +235,7 @@ export const food_list = [
         _id: "12",
         name: "Vanilla Ice Cream",
         image: food_12,
-        price: 12,
+        price: 15,
         description: "Classic vanilla ice cream with a rich and creamy texture.",
         category: "Deserts"
     },
@@ -231,7 +243,7 @@ export const food_list = [
         _id: "13",
         name: "Chicken Sandwich",
         image: food_13,
-        price: 12,
+        price: 18,
         description: "Juicy chicken sandwich with fresh toppings and bread.",
         category: "Sandwich"
     },
@@ -327,7 +339,7 @@ export const food_list = [
         _id: "25",
         name: "Cheese Pasta",
         image: food_25,
-        price: 12,
+        price: 22,
         description: "Creamy cheese pasta that melts in your mouth.",
         category: "Pasta"
     },
@@ -359,7 +371,7 @@ export const food_list = [
         _id: "29",
         name: "Butter Noodles",
         image: food_29,
-        price: 14,
+        price: 15,
         description: "Soft noodles tossed in a buttery sauce.",
         category: "Noodles"
     },
@@ -367,7 +379,7 @@ export const food_list = [
         _id: "30",
         name: "Veg Noodles",
         image: food_30,
-        price: 12,
+        price: 17,
         description: "Flavorful veg noodles with a mix of fresh veggies.",
         category: "Noodles"
     },
@@ -392,7 +404,7 @@ export const food_list = [
         name: "Chicken Biryani",
         image: food_33,
         price: 25,
-        description: "Flavorful rice dish with tender chicken and aromatic spices.s",
+        description: "Flavorful rice dish with tender chicken and aromatic spices.",
         category: "Non-veg"
     },
     {
@@ -418,6 +430,30 @@ export const food_list = [
         price: 22,
         description: "Juicy chicken burger with savory spices and crispy lettuce.",
         category: "Burger"
+    },
+    {
+        _id: "37",
+        name: "Hyderabadi Biriyani",
+        image: food_37,
+        price: 22,
+        description: "Flavorful biriyani with tender chicken, aromatic spices, and fragrant basmati rice.",
+        category: "Biriyani"
+    },
+    {
+        _id: "38",
+        name: "Egg Biriyani",
+        image: food_38,
+        price: 22,
+        description: "Delicious biriyani with perfectly cooked eggs, aromatic spices, and fragrant basmati rice.",
+        category: "Biriyani"
+    },
+    {
+        _id: "39",
+        name: "Mutton Biriyani",
+        image: food_39,
+        price: 27,
+        description: "Rich biriyani with succulent mutton, aromatic spices, and fragrant basmati rice.",
+        category: "Biriyani"
     }
     
 ]
