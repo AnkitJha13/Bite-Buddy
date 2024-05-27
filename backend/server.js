@@ -6,34 +6,43 @@ import foodRouter from "./routes/food.route.js";
 import userRouter from "./routes/user.route.js";
 import cartRouter from "./routes/cart.route.js";
 import orderRouter from "./routes/order.route.js";
+
+// Load environment variables from .env file
 dotenv.config();
-// app config
+
+// Initialize Express app
 const app = express();
 
-//middleware
+// Middleware
 app.use(express.json());
 app.use(cors());
+
+// Connect to the database
 connectDb();
 
-//api endpoints
-//food api
+// API Endpoints
+
+// Food API
 app.use("/api/food", foodRouter);
 app.use("/images", express.static("uploads"));
 
-//user api
+// User API
 app.use("/api/user", userRouter);
 
-//cart api
+// Cart API
 app.use("/api/cart", cartRouter);
 
-//order api
-app.use("/api/order", orderRouter)
+// Order API
+app.use("/api/order", orderRouter);
 
-app.get("/", (req,res)=>{
-  res.send("Hello")
-  console.log("hello")
-})
+// Root Endpoint
+app.get("/", (req, res) => {
+  res.send("Hello");
+  console.log("hello");
+});
 
-app.listen(process.env.PORT, () => {
-  console.log("Server is running in:-> " + process.env.DOMAIN);
+// Start the server
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log(`Server is running on: ${process.env.DOMAIN || `http://localhost:${port}`}`);
 });
