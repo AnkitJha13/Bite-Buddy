@@ -19,7 +19,7 @@ function Navbar({ setShowLogin }) {
         <Link to={"/"}>
           <img
             onClick={() => setMenu("home")}
-            src={assets.logo}
+            src={assets.Foodify}
             className="logo"
             alt="logo"
           />
