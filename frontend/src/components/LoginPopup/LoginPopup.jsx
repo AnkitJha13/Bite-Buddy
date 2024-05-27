@@ -123,7 +123,7 @@ function LoginPopup({ setShowLogin }) {
             </p>
             <p>
               For Admin Panel
-              <span><a href="https://foodify-sl3f.vercel.app/">Click here</a></span>
+              <span><a href="https://foodify-admin.vercel.app">Click here</a></span>
             </p>
             
             </>
