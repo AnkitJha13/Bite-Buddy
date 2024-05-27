@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./loginPopup.css";
+import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
 import { DOMAIN } from "../../config";
 import axios from "axios";

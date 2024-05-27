@@ -1,5 +1,5 @@
 import React from "react";
-import "./orders.css";
+import "./Orders.css";
 import { assets } from "../../assets/assets";
 import axios from "axios";
 import { useState } from "react";

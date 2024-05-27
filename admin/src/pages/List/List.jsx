@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./list.css";
+import "./List.css";
 import { DOMAIN } from "../../config";
 import { toast } from "react-toastify";
 import {Link} from 'react-router-dom'

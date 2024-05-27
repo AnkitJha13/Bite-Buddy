@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./verify.css";
+import "./Verify.css";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { DOMAIN } from "../../config";
 import axios from "axios";

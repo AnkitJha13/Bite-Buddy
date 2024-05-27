@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "./update.css";
+import "./Update.css";
 import axios from "axios";
 import { assets } from "../../assets/assets";
 import { DOMAIN } from "../../config";

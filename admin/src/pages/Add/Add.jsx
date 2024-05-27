@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./add.css";
+import "./Add.css";
 import { assets } from "../../assets/assets";
 import { DOMAIN } from "../../config";
 import axios from "axios";
