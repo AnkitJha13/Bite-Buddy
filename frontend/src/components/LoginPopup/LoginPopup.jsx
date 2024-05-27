@@ -116,10 +116,17 @@ function LoginPopup({ setShowLogin }) {
             <p>By continuing, I agree to terms of use & privacy policy.</p>
           </div>
           {currState === "Sign Up" ? (
+            <>
             <p>
               Already have an account?
               <span onClick={() => setCurrState("Login")}>Login</span>
             </p>
+            <p>
+              For Admin Panel
+              <span><a href="https://foodify-sl3f.vercel.app/">Click here</a></span>
+            </p>
+            
+            </>
           ) : (
             <p>
               Create a new account?{" "}
@@ -127,6 +134,7 @@ function LoginPopup({ setShowLogin }) {
             </p>
           )}
         </form>
+        
       </div>
     </>
   );
