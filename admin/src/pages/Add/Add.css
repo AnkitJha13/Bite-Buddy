@@ -1,36 +1,78 @@
-.add{
+.add {
     width: 70%;
-    margin-left: max(5vw,25px);
+    margin-left: max(5vw, 25px);
     margin-top: 50px;
-    color: #6D6D6D;
+    color: #6d6d6d;
     font-size: 16px;
 }
-.add form{
-   gap: 20px;
+
+.add form {
+    gap: 20px;
 }
-.add-img-upload img{
-    width: 140px;
-    height: 90px;
+
+.add-image-upload img {
+    max-width: 120px ;
+    max-height: 120px ;
 }
-.add-product-name, .add-product-description{
-    width: max(40%,280px);
+
+.add-product-name,
+.add-product-desc {
+    width: max(40%, 280px);
 }
-.add-product-name input ,.add-product-description textarea{
-    padding: 10px 10px;
+
+.add-product-name input,
+.add-product-desc textarea {
+    padding: 10px;
+    resize: none;
 }
-.add-category-price{
+
+.add-category-price {
     display: flex;
     gap: 30px;
 }
-.add-category-price select,.add-category-price input{
-    max-width: 120px;
+
+.add-category-price select {
+    width: max-content;
     padding: 10px;
 }
-.add-btn{
-    max-width: 120px;
+
+.add-category-price input {
+    width: 120px;
+    padding: 10px;
+}
+
+.add-availibilty {
+    display: flex;
+    gap: 20px;
+}
+
+.add-availibilty input {
+    width: 25px;
+    cursor: pointer;
+}
+
+.add-veg  {
+    display: flex;
+    gap: 30px;
+}
+.veg-option{
+    display: flex;
+    gap: 7px;
+    cursor: pointer;
+}
+
+.add-btn {
+    width: 120px;
     border: none;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.84);
+    background-color: black;
     color: white;
     cursor: pointer;
+}
+
+@media (max-width:600px) {
+    .add-category-price{
+        flex-direction: column;
+    }
+    
 }

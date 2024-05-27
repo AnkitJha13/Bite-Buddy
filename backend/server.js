@@ -1,33 +1,39 @@
-import express  from "express"
-import cors from 'cors'
-import { connectDb } from "./config/db.js"
-import userRouter from "./routes/userRoute.js"
-import foodRouter from "./routes/foodRoute.js"
-import 'dotenv/config'
-import cartRouter from "./routes/cartRoute.js"
-import orderRouter from "./routes/orderRoute.js"
-
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import { connectDb } from "./config/db.js";
+import foodRouter from "./routes/food.route.js";
+import userRouter from "./routes/user.route.js";
+import cartRouter from "./routes/cart.route.js";
+import orderRouter from "./routes/order.route.js";
+dotenv.config();
 // app config
-const app = express()
-const port = 4000
+const app = express();
 
+//middleware
+app.use(express.json());
+app.use(cors());
+connectDb();
 
-// middlewares
-app.use(express.json())
-app.use(cors())
+//api endpoints
+//food api
+app.use("/api/food", foodRouter);
+app.use("/images", express.static("uploads"));
 
-// db connection
-connectDb()
+//user api
+app.use("/api/user", userRouter);
 
-// api endpoints
-app.use("/api/user", userRouter)
-app.use("/api/food", foodRouter)
-app.use("/images",express.static('uploads'))
-app.use("/api/cart", cartRouter)
-app.use("/api/order",orderRouter)
+//cart api
+app.use("/api/cart", cartRouter);
 
-app.get("/", (req, res) => {
-    res.send("API Working")
-  });
+//order api
+app.use("/api/order", orderRouter)
 
-app.listen(port, () => console.log(`Server started on http://localhost:${port}`))
+app.get("/", (req,res)=>{
+  res.send("Hello")
+  console.log("hello")
+})
+
+app.listen(process.env.PORT, () => {
+  console.log("Server is running in:-> " + process.env.DOMAIN);
+});

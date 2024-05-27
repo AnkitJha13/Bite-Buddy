@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 
-
-export const connectDb = async () => {
-    await mongoose.connect('mongodb+srv://ankitjha1403:Athena69@cluster0.zrpvhqi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
-    .then(() => console.log("db connected"));
+export const connectDb = async ()=>{
+    if (!process.env.MONGODB_URI) {
+        console.error('MongoDB URI is not defined. Please check your environment variables.');
+        process.exit(1); // Exit the application process
+    }
+    await mongoose.connect(process.env.MONGODB_URI)
+    .then(()=>console.log("Connected to Database"))
 }

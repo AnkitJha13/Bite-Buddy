@@ -1,22 +1,22 @@
 import React from "react";
-import "./Header.css";
-
-const Header = () => {
+import "./header.css";
+function Header() {
   return (
-    <div className="header">
-      <div className="header-contents">
-        <h3>Order your favourite food here</h3>
-        <p>
-          Explore our diverse menu, where each dish is crafted with the finest
-          ingredients and culinary mastery. We aim to delight your palate and
-          enhance your dining experience with every delectable bite. Join us on
-          a culinary journey that promises satisfaction and indulgence, one
-          extraordinary meal at a time.
-        </p>
-        <button>View Menu</button>
+    <>
+      <div className="header">
+        <div className="header-content">
+          <h2>Order your favourite food here.</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
+            nulla voluptates iusto ullam quae. Explicabo fuga possimus expedita
+            odio molestias. Quaerat, repellendus? Voluptate delectus architecto
+            vero nostrum laborum? Ducimus, magnam.
+          </p>
+          <a href="#explore-menu"><button>View Menu &nbsp; &rarr;</button></a>
+        </div>
       </div>
-    </div>
+    </>
   );
-};
+}
 
 export default Header;

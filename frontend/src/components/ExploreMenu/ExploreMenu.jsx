@@ -1,21 +1,18 @@
-import React, { useContext } from "react";
-import "./ExploreMenu.css";
-import { StoreContext } from "../../context/StoreContext";
-
-const ExploreMenu = ({ category, setCategory }) => {
-  const { menu_list } = useContext(StoreContext);
-
+import React from "react";
+import "./exploreMenu.css";
+import { menu_list } from "../../assets/assets";
+function ExploreMenu({ category, setCategory }) {
   return (
-    <div className="explore-menu" id="explore-menu">
-      <h1>Explore our menu</h1>
-      <p className="explore-menu-text">
-        Choose from a diverse menu featuring a delectable array of dishes. Our
-        mission is to satisfy your cravings and elevate your dining experience,
-        one delicious meal at a time.
-      </p>
-      <div className="explore-menu-list">
-        {menu_list.map((item, index) => {
-          return (
+    <>
+      <div className="explore-menu" id="explore-menu">
+        <h1>Explore our menu</h1>
+        <p className="explore-menu-text">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas ut enim
+          incidunt fugiat illo voluptates, porro expedita nostrum ducimus
+          maiores.
+        </p>
+        <div className="explore-menu-list">
+          {menu_list.map((item, index) => (
             <div
               onClick={() =>
                 setCategory((prev) =>
@@ -26,18 +23,18 @@ const ExploreMenu = ({ category, setCategory }) => {
               className="explore-menu-list-item"
             >
               <img
-                src={item.menu_image}
                 className={category === item.menu_name ? "active" : ""}
-                alt=""
+                src={item.menu_image}
+                alt="menu_image"
               />
               <p>{item.menu_name}</p>
             </div>
-          );
-        })}
+          ))}
+        </div>
+        <hr />
       </div>
-      <hr />
-    </div>
+    </>
   );
-};
+}
 
 export default ExploreMenu;

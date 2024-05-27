@@ -1,50 +1,89 @@
-import React, { useContext, useEffect, useState } from 'react'
-import './Navbar.css'
-import { assets } from '../../assets/assets'
-import { Link, useNavigate } from 'react-router-dom'
-import {StoreContext} from "../../context/StoreContext"
-
-const Navbar = ({ setShowLogin }) => {
-
+import React, { useContext, useState } from "react";
+import "./navbar.css";
+import { assets } from "../../assets/assets";
+import { Link, useNavigate } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext";
+function Navbar({ setShowLogin }) {
   const [menu, setMenu] = useState("home");
-  const { getTotalCartAmount, token ,setToken } = useContext(StoreContext);
-  const navigate = useNavigate();
-
-  const logout = () => {
-    localStorage.removeItem("token");
-    setToken("");
+  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const navigate = useNavigate()
+  const logout = () =>{
+    localStorage.removeItem("Token")
+    localStorage.removeItem("Email")
+    setToken("")
     navigate('/')
   }
-
   return (
-    <div className='navbar'>
-      <Link to='/'><img className='logo' src={assets.Foodify} alt="" /></Link>
-      <ul className="navbar-menu">
-        <Link to="/" onClick={() => setMenu("home")} className={`${menu === "home" ? "active" : ""}`}>home</Link>
-        <a href='#explore-menu' onClick={() => setMenu("menu")} className={`${menu === "menu" ? "active" : ""}`}>menu</a>
-        <a href='#app-download' onClick={() => setMenu("mob-app")} className={`${menu === "mob-app" ? "active" : ""}`}>mobile app</a>
-        <a href='#footer' onClick={() => setMenu("contact")} className={`${menu === "contact" ? "active" : ""}`}>contact us</a>
-      </ul>
-      <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
-        <Link to='/cart' className='navbar-search-icon'>
-          <img src={assets.basket_icon} alt="" />
-          <div className={getTotalCartAmount() > 0 ? "dot" : ""}></div>
+    <>
+      <div className="navbar">
+        <Link to={"/"}>
+          <img
+            onClick={() => setMenu("home")}
+            src={assets.logo}
+            className="logo"
+            alt="logo"
+          />
         </Link>
-        {!token ? <button onClick={() => setShowLogin(true)}>sign in</button>
-          : <div className='navbar-profile'>
-            <img src={assets.profile_icon} alt="" />
-            <ul className='navbar-profile-dropdown'>
-              <li onClick={()=>navigate('/myorders')}> <img src={assets.bag_icon} alt="" /> <p>Orders</p></li>
-              <hr />
-              <li onClick={logout}> <img src={assets.logout_icon} alt="" /> <p>Logout</p></li> 
-            </ul>
+        <ul className="navbar-menu">
+          <Link
+            to="/"
+            className={menu === "home" ? "active" : ""}
+            onClick={() => setMenu("home")}
+          >
+            Home
+          </Link>
+          <a
+            href="#explore-menu"
+            className={menu === "menu" ? "active" : ""}
+            onClick={() => setMenu("menu")}
+          >
+            Menu
+          </a>
+          <a
+            href="#app-download"
+            className={menu === "mobileapp" ? "active" : ""}
+            onClick={() => setMenu("mobileapp")}
+          >
+            Mobile App
+          </a>
+          <a
+            href="#contact-us"
+            className={menu === "contactus" ? "active" : ""}
+            onClick={() => setMenu("contactus")}
+          >
+            Contact Us
+          </a>
+        </ul>
+        <div className="navbar-right">
+          <img src={assets.search_icon} alt="" />
+          <div className="navbar-search-icon">
+            <Link to={"/cart"}>
+              <img
+                onClick={() => setMenu("cart")}
+                src={assets.bag_icon}
+                alt=""
+              />
+            </Link>
+            <div className={getTotalCartAmount() > 0 ? "dot" : ""}></div>
           </div>
-        }
-
+          {localStorage.getItem('Token') ? (
+            <div className="navbar-profile">
+              <img src={assets.profile_icon} alt="profile" />
+              <ul className='nav-profile-dropdown'>
+                <Link to={'/myorders'}><li ><img src={assets.bag_icon} alt="bag" /> 
+                  <p>Orders</p>
+                </li></Link>
+                <hr />
+                <li onClick={logout}><img src={assets.logout_icon} alt="logout" /><p>Logout</p></li>
+              </ul>
+            </div>
+          ) : (
+            <button onClick={() => setShowLogin(true)}>Sign In</button>
+          )}
+        </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;

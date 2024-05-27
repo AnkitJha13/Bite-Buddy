@@ -1,66 +1,79 @@
-import React, { useEffect, useState } from 'react'
-import './List.css'
-import { url } from '../../assets/assets'
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import React, { useEffect, useState } from "react";
+import "./list.css";
+import { DOMAIN } from "../../config";
+import { toast } from "react-toastify";
+import {Link} from 'react-router-dom'
+import axios from "axios";
+import { assets } from "../../assets/assets";
+function List() {
+  const [list, setList] = useState([]);
 
-const List = () => {
-
-  const [list,setList] = useState([]);
-  
   const fetchList = async () => {
-    const response = await axios.get(`${url}/api/food/list`)
-    if(response.data.success)
-    {
-      setList(response.data.data);
-    }
-    else{
-      toast.error("Error")
-    }
-  }
-
-  const removeFood = async (foodId) => {
-    const response = await axios.post(`${url}/api/food/remove`,{
-      id:foodId
-    })
-    await fetchList();
+    const response = await axios.get(`${DOMAIN}/api/food/list`);
     if (response.data.success) {
-      toast.success(response.data.message);
+      setList(response.data.data);
+      console.log(response.data);
+    } else {
+      toast.error(response.data.message);
     }
-    else {
-      toast.error("Error")
-    }
-  }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchList();
-  },[])
-
+  }, []);
   return (
-    <div className='list add flex-col'>
-        <p>All Foods List</p>
-        <div className='list-table'>
+    <>
+      <div className="list add flex-col">
+        <p>All Food List</p>
+        <div className="list-table">
           <div className="list-table-format title">
+            <b></b>
             <b>Image</b>
             <b>Name</b>
             <b>Category</b>
             <b>Price</b>
             <b>Action</b>
           </div>
-          {list.map((item,index)=>{
+          {list.map((item, index) => {
             return (
-              <div key={index} className='list-table-format'>
-                <img src={`${url}/images/`+item.image} alt="" />
-                <p>{item.name}</p>
-                <p>{item.category}</p>
-                <p>${item.price}</p>
-                <p className='cursor' onClick={()=>removeFood(item._id)}>x</p>
+              <div className="list-table-format" key={index}>
+                <img
+                  className={
+                    item.available ? "vegnonveg hide" : "vegnonveg opacity hide"
+                  }
+                  src={item.veg ? assets.veg_icon : assets.nonveg_icon}
+                  alt=""
+                />
+                <img
+                  className={
+                    item.available ? "food-image" : "food-image opacity"
+                  }
+                  src={`${DOMAIN}/images/` + item.image}
+                  alt={item.name}
+                />
+                <p className={item.available ? "" : "opacity"}>{item.name}</p>
+                <p className={item.available ? "hide" : "hide opacity"}>
+                  {item.category}
+                </p>
+                <p className={item.available ? "" : "opacity"}>${item.price}</p>
+                <Link to={`/update/${item._id}`}>
+                  <p
+                    className={
+                      item.available
+                        ? "cursor-pointer"
+                        : " cursor-pointer opacity"
+                    }
+                  >
+                    <img src={assets.edit_icon} className="edit-icon" />
+                  </p>
+                </Link>
               </div>
-            )
+            );
           })}
         </div>
-    </div>
-  )
+      </div>
+    </>
+  );
 }
 
-export default List
+export default List;

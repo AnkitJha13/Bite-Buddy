@@ -1,17 +1,19 @@
-import React from 'react'
-import './AppDownload.css'
-import { assets } from '../../assets/assets'
-
-const AppDownload = () => {
-    return (
-        <div className='app-download' id='app-download'>
-            <p>For Better Experience Download <br />Foodify App</p>
-            <div className="app-download-platforms">
-                <img src={assets.play_store} alt="" />
-                <img src={assets.app_store} alt="" />
-            </div>
+import React from "react";
+import "./appDownload.css";
+import { assets } from "../../assets/assets";
+function AppDownload() {
+  return (
+    <>
+      <div className="app-download" id="app-download">
+        <p>For Better Experience Download<br />Tomato App</p> 
+        
+        <div className="app-download-platform">
+          <img src={assets.play_store} alt="play store" />
+          <img src={assets.app_store} alt="app store" />
         </div>
-    )
+      </div>
+    </>
+  );
 }
 
-export default AppDownload
+export default AppDownload;

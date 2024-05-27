@@ -1,12 +1,15 @@
-.header{
-  height: 36vw;
-  width: 96vw;
+
+.header {
+  height: 34vw;
   margin: 30px auto;
-  background: url('/banner.png') no-repeat;
-  background-size:contain;
+  background: url("/banner.png") ;
+  border-radius: 20px;
+  background-size: contain;
   position: relative;
+  background-repeat: no-repeat;
 }
-.header-contents{
+
+.header-content {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -15,42 +18,54 @@
   max-width: 50%;
   bottom: 10%;
   left: 6vw;
-  animation: fadeIn 3s;
+  animation: fade-in 2s;
 }
-.header-contents h3{
-  font-weight:500;
+
+.header-content h2 {
+  font-weight: 500;
   color: white;
-  font-size: max(4.2vw,22px);
+  font-size: max(4.5vw, 22px);
 }
-.header-contents p{
+
+.header-content p {
   color: white;
   font-size: 1vw;
 }
-.header-contents button{
+
+.header-content button {
   border: none;
   color: #747474;
   font-weight: 500;
   padding: 1vw 2.3vw;
-  background: white;
-  font-size: max(1vw,13px);
-  border-radius: 50px;
+  background-color: white;
+  font-size: max(1vw, 13px);
+  border-radius: 100px;
+  cursor: pointer;
 }
-@media (max-width:1050px) {
-  .header{
-      height: 38vw;
-  }
-  .header-contents{
+
+@media(max-width: 1050px) {
+ 
+  .header-content {
       max-width: 45%;
   }
 }
-@media(max-width:750px){
-  .header-contents{
-      max-width: 55%;
+
+@media(max-width: 750px) {
+
+  .header-content {
+      max-width: 65%;
   }
-  .header-contents p{
-     display: none;
+
+  .header-content p {
+      display: none;
   }
-  .header-contents button{
+
+  .header-content button {
       padding: 2vw 4vw;
+  }
+}
+@media (max-width:500px) {
+  .header{
+      background-size: cover;
   }
 }
