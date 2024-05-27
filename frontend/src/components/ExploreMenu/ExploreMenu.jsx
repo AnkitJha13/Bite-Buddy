@@ -7,9 +7,11 @@ function ExploreMenu({ category, setCategory }) {
       <div className="explore-menu" id="explore-menu">
         <h1>Explore our menu</h1>
         <p className="explore-menu-text">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas ut enim
-          incidunt fugiat illo voluptates, porro expedita nostrum ducimus
-          maiores.
+          Welcome to our Food App, your gateway to a world of culinary delights!
+          With just a tap, explore an array of local restaurants and diverse
+          cuisines. Whether you're dining solo or with friends, enjoy the ease
+          of finding your perfect meal. Your next favorite dish is just moments
+          away!
         </p>
         <div className="explore-menu-list">
           {menu_list.map((item, index) => (
