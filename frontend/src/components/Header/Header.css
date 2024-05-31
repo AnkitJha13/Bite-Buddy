@@ -1,6 +1,7 @@
 
 .header {
-  height: 34vw;
+  height: 37vw;
+  width: 83vw;
   margin: 30px auto;
   background: url("/banner.png") ;
   border-radius: 20px;
