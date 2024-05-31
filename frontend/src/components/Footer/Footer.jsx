@@ -33,13 +33,13 @@ function Footer() {
             <h2>CONTACT US</h2>
             <ul>
               <li>+91 67690 98264</li>
-              <li><a href="mailto:foodify.contact@gmail.com">foodify.contact@gmail.com</a></li>
+              <li><a href="mailto:foodify.contact@gmail.com">bite-buddy.contact@gmail.com</a></li>
             </ul>
           </div>
         </div>
         <hr />
         <p className="footer-copyright">
-          Copyright 2024 @ Foodify.com - All Right Reserved.
+          Copyright 2024 @ Bite Buddy - All Rights Reserved.
         </p>
       </div>
     </>
