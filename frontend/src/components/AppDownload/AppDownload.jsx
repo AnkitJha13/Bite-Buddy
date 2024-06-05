@@ -5,7 +5,7 @@ function AppDownload() {
   return (
     <>
       <div className="app-download" id="app-download">
-        <p>For Better Experience Download<br />Foodify App</p> 
+        <p>For Better Experience Download<br />Bite Buddy App</p> 
         
         <div className="app-download-platform">
           <img src={assets.play_store} alt="play store" />
